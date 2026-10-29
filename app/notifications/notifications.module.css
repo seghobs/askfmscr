@@ -1,0 +1,178 @@
+.loadingContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.row:hover {
+  transform: translateX(4px);
+}
+
+.unread {
+  background: rgba(255, 75, 43, 0.03) !important;
+  border-color: rgba(255, 75, 43, 0.15) !important;
+}
+
+.iconWrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--input-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+}
+
+.iconLike {
+  color: #ef4444;
+  fill: rgba(239, 68, 68, 0.1);
+}
+
+.iconFollow {
+  color: #3b82f6;
+}
+
+.iconQuestion {
+  color: var(--brand-color);
+}
+
+.iconMessage {
+  color: #10b981;
+}
+
+.iconDefault {
+  color: var(--text-muted);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--border-color);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.text {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.senderLink {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.senderLink:hover {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.unreadDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-color);
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 4px);
+  box-shadow: 0 0 8px var(--brand-color);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.emptyState h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.emptyState p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header button {
+    width: 100%;
+  }
+  .unreadDot {
+    top: 12px;
+    right: 12px;
+  }
+}

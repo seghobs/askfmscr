@@ -1,0 +1,361 @@
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  height: calc(100vh - 32px);
+  position: sticky;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  margin: 16px 0;
+  z-index: 100;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.logoIcon {
+  color: var(--brand-color);
+  fill: var(--accent-soft);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.logoText {
+  color: var(--text-primary);
+}
+
+.logoText span {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.navItem:hover {
+  color: var(--text-primary);
+  background: var(--input-bg);
+  transform: translateX(4px);
+}
+
+.active {
+  color: white !important;
+  background: var(--brand-gradient) !important;
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.25);
+}
+
+.badge {
+  position: absolute;
+  right: 16px;
+  background: white;
+  color: var(--brand-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 20px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.active .badge {
+  background: white;
+  color: var(--brand-color);
+}
+
+.sidebarBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.themeToggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.themeToggleBtn:hover {
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+}
+
+.profileMeta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.displayName {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.username {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logoutBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  color: var(--brand-color);
+  background: var(--accent-soft);
+}
+
+/* Mobile Layouts */
+.mobileHeader {
+  display: none;
+  height: 60px;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border-color);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.mobileNav {
+  display: none;
+  height: 54px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+.mobileNavItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.mobileLabel {
+  display: none;
+}
+
+.mobileIconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileBadge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: var(--brand-color);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--background);
+}
+
+.mobileActive {
+  color: var(--brand-color);
+}
+
+.iconButton {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Responsiveness overrides */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .mobileHeader {
+    display: flex;
+  }
+  
+  .mobileHeader :global(.logoContainer),
+  .mobileHeader .logoContainer {
+    margin-bottom: 0 !important;
+  }
+  
+  .mobileNav {
+    display: flex;
+  }
+}
+
+.coinsDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  margin-bottom: 8px;
+}
+
+.coinsDisplay:hover {
+  border-color: #fbbf24;
+  background: rgba(251, 191, 36, 0.05);
+}
+
+.coinsLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.coinIcon {
+  color: #fbbf24;
+}
+
+.vipBadge {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.mobileCoins {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  margin-right: 8px;
+}
+
+.mobileCoins:hover {
+  border-color: #fbbf24;
+}
+
+.vipDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fbbf24;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  box-shadow: 0 0 6px #fbbf24;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+}
